@@ -17,16 +17,16 @@ public class Bigproject {
             System.out.println("1. Add item");
             System.out.println("2. Check off item");
             System.out.println("3. Remove item");
-            System.out.println("4. Exit");
-            System.out.println("5. Add preset tasks for today");
+            System.out.println("4. Add preset tasks for today");
+            System.out.println("5. Exit");
             System.out.print("Choose an option: ");
 
             int choice = 0;
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
-                scanner.nextLine(); // consume newline
+                scanner.nextLine();
             } else {
-                scanner.nextLine(); // clear invalid input
+                scanner.nextLine();
                 System.out.println("Invalid input. Try again.");
                 continue;
             }
@@ -36,6 +36,7 @@ public class Bigproject {
                 String item = scanner.nextLine();
                 todoList.add(item);
                 completed.add(false);
+
             } else if (choice == 2) {
                 System.out.print("Enter item number to check off: ");
                 int num = scanner.nextInt();
@@ -45,6 +46,7 @@ public class Bigproject {
                 } else {
                     System.out.println("Invalid item number.");
                 }
+
             } else if (choice == 3) {
                 System.out.print("Enter item number to remove: ");
                 int num = scanner.nextInt();
@@ -55,16 +57,18 @@ public class Bigproject {
                 } else {
                     System.out.println("Invalid item number.");
                 }
-            } else if (choice == 4) {
+
+            } else if (choice == 5) {
                 System.out.println("Goodbye!");
                 break;
-            } else if (choice == 5) {
+
+            } else if (choice == 4) {
                 System.out.println("What do you want to do today?");
                 System.out.println("a. Do homework");
                 System.out.println("b. Clean the house");
                 System.out.println("c. Prepare for a test");
                 System.out.print("Choose an option (a/b/c): ");
-                String answer = scanner.nextLine().trim().toLowerCase();
+                String answer = scanner.nextLine();
 
                 if (answer.equals("a")) {
                     todoList.add("Math homework");
